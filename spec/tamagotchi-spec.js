@@ -6,8 +6,12 @@ describe('tamagotchi', function() {
   beforeEach(function() {
     jasmine.clock().install();
     figure.foodLevel = 100;
+    figure.funLevel = 100;
+    figure.sleepLevel = 100;
     figure.name = "figure";
     figure.setHunger();
+    figure.setFun();
+    figure.setWake();
   });
   afterEach(function() {
     jasmine.clock().uninstall();
@@ -37,6 +41,47 @@ describe('tamagotchi', function() {
    it('should return that the tamagotchi ate the blueberries and the food level should go up 50', function() {
      expect(figure.eatSmall("blueberries")).toEqual("The tamagotchi ate the blueberries! Food level goes up 50!");
      expect(figure.foodLevel).toEqual(150);
-
    });
-});
+
+   it('should return that the tamagotchi ate the strawberries and the food level should go up 100', function() {
+     expect(figure.eatMedium("strawberries")).toEqual("The tamagotchi ate the strawberries! Food level goes up 100!");
+     expect(figure.foodLevel).toEqual(200);
+   });
+
+   it('should return that the tamagotchi ate the watermelon and the food level should go up 150', function() {
+     expect(figure.eatLarge("watermelon")).toEqual("The tamagotchi ate the watermelon! Food level goes up 150!");
+     expect(figure.foodLevel).toEqual(250);
+   });
+
+   it('should return that the tamagotchi played with the ball and the fun level should go up 50', function() {
+     expect(figure.playSmall("ball")).toEqual("The tamagotchi played with the ball! Fun level goes up 50!");
+     expect(figure.funLevel).toEqual(150);
+   });
+
+   it('should return that the tamagotchi played with the stuffie and the fun level should go up 100', function() {
+     expect(figure.playMedium("stuffie")).toEqual("The tamagotchi played with the stuffie! Fun level goes up 100!");
+     expect(figure.funLevel).toEqual(200);
+   });
+
+   it('should return that the tamagotchi played with the puzzle and the fun level should go up 150', function() {
+     expect(figure.playLarge("puzzle")).toEqual("The tamagotchi played with the puzzle! Fun level goes up 150!");
+     expect(figure.funLevel).toEqual(250);
+   });
+
+   it('should return that the tamagotchi took a short nap and the sleep level should go up 50', function() {
+     expect(figure.sleepShort("short")).toEqual("The tamagotchi took a short nap! Sleep level goes up 50!");
+     expect(figure.sleepLevel).toEqual(150);
+   });
+
+   it('should return that the tamagotchi took a medium nap and the sleep level should go up 50', function() {
+     expect(figure.sleepMedium("medium")).toEqual("The tamagotchi took a medium nap! Sleep level goes up 100!");
+     expect(figure.sleepLevel).toEqual(200);
+   });
+
+   it('should return that the tamagotchi took a long nap and the sleep level should go up 50', function() {
+     expect(figure.sleepLong("long")).toEqual("The tamagotchi took a long nap! Sleep level goes up 150!");
+     expect(figure.sleepLevel).toEqual(250);
+   });
+
+
+}); 
