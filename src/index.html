@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono|VT323&display=swap" rel="stylesheet">
     <title>Tamagotchi</title>
   </head>
   <body>
+  <div class="container">
+    <div class="card bg-dark" id="deathScreen">
+        <div id="starveCard">
+          <h3>You let your tamagotchi starve!</h3>
+        </div>
+        <div id="boredCard">
+          <h3>You let your tamagotchi die of boredom!</h3>
+        </div>
+        <div id="sleeplessCard">
+          <h3>You let your tamagotchi anneurysm!</h3>
+        </div>
 
+    </div>
+    <div id="gameBoard">
+      <div class="row" id="buttonRow">
+        <div class="col-md-4">
+          <div class="card-header">
+            <div class="card">
+              <button type="button" class="btn btn-outline-success" name="button" id="feedButton">Pantry</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card" id="foodCard">
+              <button type="button" class="btn btn-outline-success selectItem" name="button" id="blueberryButton">Blueberries</button>
+              <hr>
+              <button type="button" class="btn btn-outline-success selectItem" name="button" id="strawberryButton">Strawberries</button>
+              <hr>
+              <button type="button" class="btn btn-outline-success selectItem" name="button" id="watermelonButton">Watermelon</button>
+            </div>
+            <h4 id="foodCounter"></h4>
+          </div>
+        </div>
 
+        <div class="col-md-4">
+          <div class="card-header">
+            <div class="card">
+              <button type="button" class="btn btn-outline-success" name="button" id="sleepButton">Bed</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card" id="sleepCard">
+              <button type="button" class="btn btn-outline-success selectItem" name="button" id="shortNapButton">Short Nap</button>
+              <hr>
+              <button type="button" class="btn btn-outline-success selectItem" name="button" id="mediumNapButton">Medium Nap</button>
+              <hr>
+              <button type="button" class="btn btn-outline-success selectItem" name="button" id="longNapButton">Long Nap</button>
+            </div>
+            <h4 id="sleepCounter"></h4>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-header">
+            <div class="card">
+              <button type="button" class="btn btn-outline-success" name="button" id="playButton">Toybox</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card" id="playCard">
+              <button type="button" class="btn btn-outline-success selectItem" name="button" id="ballButton">Ball</button>
+              <hr>
+              <button type="button" class="btn btn-outline-success selectItem" name="button" id="stuffieButton">Stuffie</button>
+              <hr>
+              <button type="button" class="btn btn-outline-success selectItem" name="button" id="puzzleButton">Puzzle</button>
+            </div>
+            <h4 id="funCounter"></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
 </html>

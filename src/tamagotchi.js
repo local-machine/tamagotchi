@@ -1,13 +1,9 @@
 // Backend logic with exports, functions, constructors, etc.
 export let tamagotchi = {
-  foodLevel: 100,
+  foodLevel: 3,
   setHunger: function() {
     const hungerInterval = setInterval(() => {
       this.foodLevel --;
-      if(this.didItStarve() == true) {
-        clearInterval(hungerInterval);
-        return "Your tamagotchi Starved!";
-      }
     }, 1000);
   },
   didItStarve: function() {
@@ -32,7 +28,10 @@ export let tamagotchi = {
       this.funLevel --;
       if(this.didItBore() == true) {
         clearInterval(funInterval);
-        return "Your tamagotchi is bored!";
+        alert("Your tamagotchi died of boredom!");
+        setTimeout(function(){
+          document.location.reload()
+        }, 5000);
       }
     }, 1000);
   },
@@ -57,7 +56,10 @@ export let tamagotchi = {
       this.sleepLevel --;
       if(this.didItTire() == true) {
         clearInterval(sleepInterval);
-        return "Your tamagotchi is tired!";
+        alert("Your tamagotchi had an anneurysm from not having enough sleep!");
+        setTimeout(function(){
+          document.location.reload()
+        }, 5000);
       }
     }, 1000);
   },
@@ -75,8 +77,6 @@ export let tamagotchi = {
     }
     return doThat;
   }
-
-
 };
 
   tamagotchi.eatSmall = tamagotchi.feed(50);
